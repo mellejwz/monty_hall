@@ -47,7 +47,7 @@ x.times do
 	wins += choice(false)
 end
 
-#tell the user the amount of times won and lost
+#tell the user the amount of won and lost games
 puts'Not swapped:'
 puts 'Won games: ' + wins.to_s
 puts 'Lost games: ' + (x-wins).to_s
