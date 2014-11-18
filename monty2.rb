@@ -33,9 +33,9 @@ x.times do
 end
 
 #tell the user the amount of times won and lost
-puts 'Wel wisselen:'
-puts 'Gewonnen: ' + wins.to_s
-puts 'Verloren: ' + (x-wins).to_s
+puts 'Swapped:'
+puts 'Won games: ' + wins.to_s
+puts 'Lost games: ' + (x-wins).to_s
 puts
 
 #reset the amount of won games
@@ -48,6 +48,6 @@ x.times do
 end
 
 #tell the user the amount of times won and lost
-puts'Niet wisselen:'
-puts 'Gewonnen: ' + wins.to_s
-puts 'Verloren: ' + (x-wins).to_s
+puts'Not swapped:'
+puts 'Won games: ' + wins.to_s
+puts 'Lost games: ' + (x-wins).to_s
