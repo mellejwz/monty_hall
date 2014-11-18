@@ -1,3 +1,4 @@
+#initial variables
 user_choice=nil
 swap=nil
 a=0
