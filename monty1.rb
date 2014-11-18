@@ -50,7 +50,7 @@ else
 	won = 'goat'
 end
 
-#tell the user they have won the car or a goat
+#tell the user what they have won
 puts 'You have won'.ljust(15, '.')
 puts 'a'.center(15, '.')
 puts won.to_s.ljust(15, '!')
