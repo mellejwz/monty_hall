@@ -1,90 +1,34 @@
-i = 0
 x = 1000000
-fout = 0
-goed = 0
-puts "wel wisselen: "
-while i<x
-	i+=1
-	deuren = ['a', 'b', 'c']
-	gekozen = []
-	goede_deur = deuren[rand(0..2)]
-	keuze = deuren[rand(0..2)]
+wins = 0
 
-	gekozen.push goede_deur
-	deuren.delete(goede_deur)
-	gekozen.push keuze
-	deuren.delete(keuze)
+def choice(swap)
+	doors = ['car', 'goat', 'goat'].shuffle
 
-	if keuze == goede_deur
-		mijn_keuze = deuren[rand(0..1)]
-		deuren.delete(mijn_keuze)
-		swap = 'ja'
-
-		if swap == 'ja'
-			fout += 1
-
-		elsif swap == 'nee'
-			goed += 1
-		end
-
-	elsif keuze != goede_deur
-		mijn_keuze = deuren[0]
-		deuren.delete(mijn_keuze)
-		swap = 'ja'
-
-		if swap == 'nee'
-			fout += 1
-			puts 'fout'
-
-		elsif swap == 'ja'
-			goed += 1
+	user_choice = rand(0..2)
+	doors.each_with_index do |door, index|
+		if index != user_choice && door == 'goat'
+			quizmaster_choice = index
 		end
 	end
-end
-i=0
-puts 'goed= ' + goed.to_s
-puts 'fout= ' + fout.to_s
-puts '======'
-goed = 0
-fout = 0
-puts "niet wisselen: "
-while i<x
-	i+=1
-	deuren = ['a', 'b', 'c']
-	gekozen = []
-	goede_deur = deuren[rand(0..2)]
-	keuze = deuren[rand(0..2)]
 
-	gekozen.push goede_deur
-	deuren.delete(goede_deur)
-	gekozen.push keuze
-	deuren.delete(keuze)
-
-	if keuze == goede_deur
-		mijn_keuze = deuren[rand(0..1)]
-		deuren.delete(mijn_keuze)
-		swap = 'nee'
-
-		if swap == 'ja'
-			fout += 1
-
-		elsif swap == 'nee'
-			goed += 1
-		end
-
-	elsif keuze != goede_deur
-		mijn_keuze = deuren[0]
-		deuren.delete(mijn_keuze)
-		swap = 'nee'
-
-		if swap == 'nee'
-			fout += 1
-
-		elsif swap == 'ja'
-			goed += 1
-		end
+	if (swap == 'yes' && doors[user_choice] == 'goat') || (swap == 'no' && doors[user_choice] == 'car')
+		return 1
 	end
+	return 0
 end
-puts 'goed= ' + goed.to_s
-puts 'fout= ' + fout.to_s
-puts '======'
+
+x.times do
+	wins += choice('yes')
+end
+puts 'Wel wisselen:'
+puts 'Gewonnen: ' + wins.to_s
+puts 'Verloren: ' + (x-wins).to_s
+puts
+
+wins = 0
+x.times do
+	wins += choice('no')
+end
+puts'Niet wisselen:'
+puts 'Gewonnen: ' + wins.to_s
+puts 'Verloren: ' + (x-wins).to_s

@@ -1,27 +1,27 @@
-deuren = ['auto', 'geit', 'geit'].shuffle
+doors = ['car', 'goat', 'goat'].shuffle
 
-puts "Kies een deur (1 t/m 3)"
-keuze = gets.chomp.to_i-1
+puts "Choose a door (1-3)"
+user_choice = gets.chomp.to_i-1
 
-puts "U heeft deur "+(keuze+1).to_s+" gekozen!"
+puts "You chose door "+(user_choice+1).to_s+"!"
 
-keuze_quizmaster = nil
-deuren.each_with_index do |deur, index|
-	if index != keuze && deur == 'geit'
-		keuze_quizmaster = index
+quizmaster_choice = nil
+doors.each_with_index do |door, index|
+	if index != user_choice && door == 'goat'
+		quizmaster_choice = index
 	end
 end
 
-puts "Kijk eens aan, achter deur "+(keuze_quizmaster+1).to_s+" zit een geit"
-puts "Wilt u wisselen?"
-wissel = gets.chomp
+puts "There's a goat behind door "+(quizmaster_choice+1).to_s + '.'
+puts "Do you want to change to the other door? (yes/no)"
+swap = gets.chomp
 
-if wissel == 'ja' && deuren[keuze] == 'geit'
-	gewonnen = 'auto'
+if swap == 'yes' && doors[user_choice] == 'goat'
+	won = 'car'
 else
-	gewonnen = 'geit'
+	won = 'goat'
 end
 
-puts 'U heeft gewonnen...'
-puts '...een...'
-puts gewonnen.to_s + '!!!!!!'
+puts 'You have won'.ljust(20, '.')
+puts 'a'.center(20, '.')
+puts won.to_s.ljust(20, '!')
