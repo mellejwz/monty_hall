@@ -6,7 +6,7 @@ wins = 0
 
 #this method defines the game mechanics
 def choice(swap)
-	#safe the goats and the car in an array and shuffle them
+	#save the goats and the car in an array and shuffle them
 	doors = ['car', 'goat', 'goat'].shuffle
 
 	#let the user automagically choose a random door

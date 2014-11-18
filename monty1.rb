@@ -1,7 +1,7 @@
-#safe the goats and the car in an array and shuffle them
+#save the goats and the car in an array and shuffle them
 doors = ['car', 'goat', 'goat'].shuffle
 
-#ask the use to choose a door and safe their choice in a variable
+#ask the use to choose a door and save their choice in a variable
 puts "Choose a door (1-3)"
 user_choice = gets.chomp.to_i-1
 
