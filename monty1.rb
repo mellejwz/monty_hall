@@ -39,7 +39,7 @@ while b<1
 	if swap=='yes'||swap=='no'
 		b=1
 	else
-		puts 'Please answer yes or no'
+		puts 'Please answer yes or no.'
 	end
 end
 
