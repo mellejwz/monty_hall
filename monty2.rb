@@ -9,8 +9,8 @@ def choice(swap)
 	end
 	if (swap==true && doors[user_choice]=='goat') || (swap==false && doors[user_choice]=='car')
 		return 1
+	else return 0
 	end
-	return 0
 end
 x.times do
 	swapped_win+=choice(true)
